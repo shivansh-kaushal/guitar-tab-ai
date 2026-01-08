@@ -2,3 +2,4 @@ venv
 .env
 test.ipynb
 __pycache__/
+cached_audio/
