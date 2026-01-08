@@ -1,0 +1,4 @@
+flask
+python_dotenv
+yt-dlp
+flask-cors
