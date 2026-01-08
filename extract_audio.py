@@ -35,10 +35,10 @@ def download():
     if not yt_link:
         return jsonify({"error": "Link not valid"}), 400
 
-    provided_key = request.headers.get("X-Secret-Key")
-    if not verify_secret_key(provided_key):
-        print("Invalid")
-        return jsonify({"error": "Invalid secret key"}), 401
+    # provided_key = request.headers.get("X-Secret-Key")
+    # if not verify_secret_key(provided_key):
+    #     print("Invalid")
+    #     return jsonify({"error": "Invalid secret key"}), 401
     
     try:
         url = yt_link
@@ -46,7 +46,7 @@ def download():
             'format': 'best', 
             'postprocessors': [{
                 'key': 'FFmpegExtractAudio',
-                'preferredcodec': 'mp3',
+                'preferredcodec': 'wav',
                 'preferredquality': '192',
             }],
             'outtmpl': 'cached_audio/%(title)s.%(ext)s',
